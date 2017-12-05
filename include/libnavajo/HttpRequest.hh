@@ -35,7 +35,8 @@ typedef enum {
   DELETE_METHOD = 4,
   UPDATE_METHOD = 5,
   PATCH_METHOD = 6,
-  OPTIONS_METHOD = 7
+  OPTIONS_METHOD = 7,
+  HEAD_METHOD = 8
 } HttpRequestMethod;
 
 typedef enum { GZIP, ZLIB, NONE } CompressionMode;

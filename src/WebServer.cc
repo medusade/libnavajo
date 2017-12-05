@@ -553,6 +553,9 @@ bool WebServer::accept_request(ClientSockData* client, bool authSSL)
                 else
                   if (strncmp(bufLine+j, "OPTIONS", 7) == 0)
                     { requestMethod=OPTIONS_METHOD; isQueryStr=true; j+=7; }
+                  else
+                    if (strncmp(bufLine+j, "HEAD", 4) == 0)
+                    {  requestMethod=HEAD_METHOD; isQueryStr=true; j+=5; }
 
         if (isQueryStr)
         {
