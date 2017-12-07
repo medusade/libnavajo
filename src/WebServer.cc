@@ -556,6 +556,12 @@ bool WebServer::accept_request(ClientSockData* client, bool authSSL)
                   else
                     if (strncmp(bufLine+j, "HEAD", 4) == 0)
                     {  requestMethod=HEAD_METHOD; isQueryStr=true; j+=5; }
+                    else
+                       if (strncmp(bufLine+j, "TRACE", 5) == 0)
+                         { requestMethod=TRACE_METHOD; isQueryStr=true; j+=7; }
+                       else
+                         if (strncmp(bufLine+j, "CONNECT", 7) == 0)
+                         {  requestMethod=CONNECT_METHOD; isQueryStr=true; j+=5; }
 
         if (isQueryStr)
         {

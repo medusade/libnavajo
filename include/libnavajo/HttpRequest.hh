@@ -29,6 +29,7 @@
 
 typedef enum {
   UNKNOWN_METHOD = 0,
+
   GET_METHOD = 1,
   POST_METHOD = 2,
   PUT_METHOD = 3,
@@ -36,7 +37,13 @@ typedef enum {
   UPDATE_METHOD = 5,
   PATCH_METHOD = 6,
   OPTIONS_METHOD = 7,
-  HEAD_METHOD = 8
+  HEAD_METHOD = 8,
+  TRACE_METHOD = 9,
+  CONNECT_METHOD = 10,
+
+  FIRST_METHOD = GET_METHOD,
+  LAST_METHOD = CONNECT_METHOD,
+  METHOD_COUNT = ((LAST_METHOD - FIRST_METHOD) + 1)
 } HttpRequestMethod;
 
 typedef enum { GZIP, ZLIB, NONE } CompressionMode;
